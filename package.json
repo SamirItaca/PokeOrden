@@ -4,7 +4,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "migration:prisma": "npx prisma migrate dev --name init --schema ./database/prisma/schema.prisma"
+    "update:prisma:client": "npx prisma generate --config ./database/prisma/prisma.config.ts",
+    "update:database": "npx prisma migrate deploy --config ./database/prisma/prisma.config.ts",
+    "show:database": "npx prisma studio --config ./database/prisma/prisma.config.ts"
   },
   "keywords": [],
   "author": "",
